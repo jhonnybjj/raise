@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<script>
+
+var perfil = location.search.split('perfil=')[1]
+
+	var email_logado_principal = window.localStorage.getItem('email_logado_principal');
+
+
+if (perfil === undefined) {
+	var login = window.localStorage.getItem('login');
+} else { 
+    
+//alert(perfil);
+ // document.getElementById('ADD_ATIVIDADE_2').hidden = "hidden"; // hide body div tag
+var login = perfil;	 
+}		
+	
+if (login === null) {
+alert('Você precisa estar logado para acessar essa pagina!');
+window.location.href = "index.html";	
+} else { }	
+</script>
+
+
+
+
+
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="initial-scale=1.0">
+
+<!-- BEGIN WEB APP META -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- END WEB APP META -->
+
+
+
+<title>Raise</title>
+
+
+<meta name="robots" content="noindex,nofollow">
+	
+
+<link rel="stylesheet" href="shortcodes-by-bonfire.css?ver=1" type="text/css" media="all">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans%7CMontserrat%3A400%2C700%27+rel%3D%27stylesheet%27+type%3D%27text%2Fcss&amp;ver=3.7.21" type="text/css" media="all">
+<link rel="stylesheet" href="style.css" type="text/css" media="all">
+	   
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" media="all">
+
+	
+<script src="cordova.js"></script>
+<script src="java/index.js"></script>
+<script src="java/jquery-3.2.1.min.js"></script>
+
+<script src="java/shortcodes-by-bonfire.js"></script>
+    
+	<script src="java/jquery.mask.js"></script>
+
+
+    
+
+    
+    
+    
+	<script>$(document).ready(function(){
+  //$('.atividade').mask('00/00/0000');
+});
+	</script>    
+    
+    
+
+</head>
+
+
+
+<body class="page page-id-521 page-template page-template-page-contact-php">
+
+	<!-- PROCURAR -->
+	<div class="procurar_sistema">
+	<h6 style="text-align: center; padding-top:5px;padding-bottom: 0px;">Atividades</h6>
+		<p style="text-align: center;">Acompanhe o resumo.</p>
+		
+		
+		
+<form id="live-search" action="" class="styled" method="post">
+    <fieldset>
+		
+		<div class="name-wrapper">
+			<input type="text" id="filter" placeholder="Pesquisar"></div>
+		
+        <span id="filter-count"></span>
+    </fieldset>
+</form>
+
+<nav>
+    <ul>
+		<span class="resultado_busca"></span>
+      
+    </ul>
+</nav>		
+		
+		
+		
+		
+		
+		
+	
+	</div>
+	
+	
+	<!-- PROCURAR -->
+
+	
+	
+	<!-- menu aqui -->
+	
+	
+
+	<div id="ss_menu">
+ <div> <i id="PROFILE" class="fa fa-home"></i> </div>
+  <div> <i class="fa fa-globe"></i> </div>
+  <div> <i id="SAIR" class="fa fa fa-user"></i> </div>
+          <div> <i id="PROCURAR_SISTEMA" class="fa fa-search"></i> </div>
+
+  <div class="menu2">
+    <div class="share" id="ss_toggle" data-rot="180">
+      <div style="margin-top: 15px;margin-left: 17px;"><i class="fa fa-bars"></i></div>
+
+	  </div>
+  </div>
+</div>
+
+	
+
+	
+	
+	
+	<!-- menu aqui -->
+	
+	
+
+<div id="sitewrap">
+<!-- BEGIN NON-INDEX HEADER SPACING --><div></div><!-- END NON-INDEX HEADER SPACING -->
+
+	<div id="body" class="pagewidth clearfix">
+	<div id="content" class="clearfix">
+
+<div class="wrapper-outer" style="margin-bottom:10px">
+<div class="content-wrapper">
+<div class="page-wrapper">
+
+<div class="entry-content">
+
+	
+	
+	    <link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel="stylesheet" type="text/css"> <!-- PT Sans Narrow /-->
+
+
+    
+	<!-- SPEAKERS SECTION -->	
+	
+<div class="equipe_menuzinho"></div>
+	
+	
+	<section id="speakers">
+	
+		<div class="container" style=" margin-top: 40px;">
+			
+			<!-- First Row of Speakers -->
+			<div class="row1">
+			
+				<!-- Speaker 1 -->
+				<div class="col-md-3" style="padding-bottom: 0px;">
+				
+                    
+                    <div class="avatarr" id="seguir"></div>
+                    
+               
+                    
+                    
+                    
+                    
+						<div class="hover_img">
+						<img src="img/speaker-1-hover.png" alt="">
+						</div>
+				
+						<span style="color:#fff;" class="modalidade_jquery"></span>
+
+<h4>
+	
+
+						<span class="nome_perfil_jquery"></span>
+						<div class="sobrenome_jquery"></div>
+</h4>
+					
+			<ul class="graduacao">
+						<li class="graduacao_jquery"></li>
+						<li class="inicio_atividade"></li>
+						<li class="seguidores_jquery"></li>
+                		<li class="raises"></li>
+
+	
+				 
+					</ul>										
+
+				</div>
+				
+		
+
+			</div>	<!-- End Second Row -->	
+			<div class="clear"></div>
+			
+		
+					
+		</div>
+		
+	
+	</section>
+	<!-- //SPEAKERS SECTION -->	
+	
+	
+<a href="javascript:void();" id="QUADRO_MEDALHAS">	
+    
+
+<section style="margin-top:10px; text-align: center;
+    border-radius: 25px;
+    color: #fff;
+    padding: 3px;
+   background: #56CCF2;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+">
+	
+	<small><img style="vertical-align: middle;" src="img/Medalha.png"><span class="ouro_perfil"></span></small>
+	<small><img style="vertical-align: middle;" src="img/Medalha2.png"><span class="prata_perfil"></span></small>
+	<small>	<img style="vertical-align: middle;" src="img/Medalha3.png"><span class="bronze_perfil"></span></small>
+	
+</section>		
+</a>	
+	
+	
+	<div style="text-align: center;">
+	
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
+	
+
+
+<p></p>
+
+
+		
+	<div class="menu-wrapper" style="bottom: auto;position: inherit;">
+		
+<!-- BEGIN BACK BUTTON --><div class="menu-back" id="feed"></div><!-- BEGIN SPACER --><div class="menu-spacer-wrapper"><div class="menu-spacer"></div></div>
+<!-- BEGIN CALL BUTTON --><a href="javascript:void(0);" id="atividades" class="menu-call-a"><div class="menu-call"></div></a><!-- END CALL BUTTON -->
+<!-- BEGIN SPACER --><div class="menu-spacer-wrapper"><div class="menu-spacer"></div></div><!-- END SPACER -->
+
+		
+		<!-- BEGIN EMAIL BUTTON --><a href="javascript:void(0);" id="agenda" class="menu-email-a"><div class="menu-email"></div></a><!-- END EMAIL BUTTON -->
+
+		
+		<!-- BEGIN SPACER --><div class="menu-spacer-wrapper"><div class="menu-spacer"></div></div><!-- END SPACER -->
+		
+		
+
+<!-- BEGIN CALL BUTTON --><a href="javascript:void(0);" id="campanha" class="menu-call-a"><div class="menu-search"></div></a><!-- END CALL BUTTON -->
+
+		
+		
+<!-- BEGIN SPACER --><div class="menu-spacer-wrapper"><div class="menu-spacer"></div></div><!-- END SPACER -->
+		
+	
+		
+<div id="galeria" class="menu-button">
+	<div class="menu-tooltip"></div>
+	<div class="menu-spacer-wrapper"></div>
+</div> 
+
+		
+		
+		
+		
+</div>	
+		
+		
+		
+		
+		
+		
+		
+</div>
+	
+
+    
+    <div style="clear: both; padding:5px;"></div>
+
+    
+            <div id="quadro_medalha_load"></div>
+            <div id="equipe_load"></div>
+
+    
+    
+    
+	<section class="feed">
+
+        <div class="feed_injeta"></div>
+        
+</section>
+	
+	
+<section class="atividades" id="atualizar_atividades" style="">
+	<h6 style="text-align: center; padding-top:5px;padding-bottom: 0px;">Atividades</h6>
+	<p style="text-align: center;">Acompanhe o resumo.</p>
+	
+	
+	<div class="ADD_ATIVIDADE" id="ADD_ATIVIDADE_2">
+		<b style="font-family: 'PT Sans Narrow', sans-serif;"><i class="fa fa-address-card-o"></i> ADICIONAR</b><br>
+	</div>
+	
+	
+	<span class="atividades_usuario"></span>
+
+
+</section>	
+    
+    
+    
+<section class="agenda" style="">
+	<h6 style="text-align: center; padding-top:5px;padding-bottom: 0px;">Agenda</h6>
+	<p style="text-align: center;">Acompanhe a agenda.</p>
+	
+	
+	<div class="ADD_AGENDA" id="ADD_AGENDA_2">
+		<b style="font-family: 'PT Sans Narrow', sans-serif;"><i class="fa fa-address-card-o"></i> ADICIONAR</b><br>
+	</div>
+	
+	
+	<span class="agenda_usuario"></span>
+
+
+</section>	    
+    
+    
+    
+    
+    
+    
+    
+
+	
+<section class="campanha" id="campanha">
+<div id="load_campanha"></div>
+	
+</section>	
+
+	
+<section class="galeria" id="galeria">
+
+<div id="load_galeria"></div>
+  
+    
+</section>	
+	
+	
+    
+	
+<script charset="utf-8">
+
+ $(document).ready(function(){
+     
+ 
+     
+     
+     
+     $("#QUADRO_MEDALHAS").click(function(){
+    $("#quadro_medalha_load").load("quadro_medalhas.html?nocache=" + Math.random() + ""); 
+     $('#quadro_medalha_load').slideDown(200).animate({opacity: 1}, 100);
+     $(".feed,.atividades,.agenda,.campanha,.galeria,#equipe_load").css('display','none');
+});
+     
+     
+         
+     $(".equipe_menuzinho").click(function(){ 
+    $("#equipe_load").load("equipe_sem.html?nocache=" + Math.random() + ""); 
+     $('#equipe_load').slideDown(200).animate({opacity: 1}, 100);
+     $(".feed,.atividades,.agenda,.campanha,.galeria,#quadro_medalha_load").css('display','none');
+}); 
+     
+     
+     
+     
+     
+ 
+$("#galeria").click(function(){
+$("#load_galeria").load("galeria_fotos.html?nocache=" + Math.random() + ""); 
+$('#load_galeria').slideDown(200).animate({opacity: 1}, 100);
+});   
+     
+ $("#campanha").click(function(){
+$("#load_campanha").load("campanha.html?nocache=" + Math.random() + ""); 
+$('#load_campanha').slideDown(200).animate({opacity: 1}, 100);
+});      
+     
+     
+     
+if (perfil === undefined) {
+} else { 
+	document.getElementById('ADD_ATIVIDADE_2').hidden = "hidden"; // hide body div tag
+    document.getElementById('ADD_AGENDA_2').hidden = "hidden"; // hide body div tag
+}
+     
+	 
+
+});
+    
+    
+    
+
+
+    
+    
+    
+$( "#PROCURAR_SISTEMA" ).click(function() {
+$(".procurar_sistema").animate({width:'toggle'},350);	
+});		
+		
+	
+
+$( "#SAIR" ).click(function() {
+window.sessionStorage.removeItem('login');
+window.location.href = "index.html";	
+});
+	
+// LEIO PARA A BUSCA
+var url_pesquisar = "http://hostplasma.com.br/raise/busca.php?nocache=" + Math.random() + "";
+$.getJSON(url_pesquisar, function(result_pesquisar) {
+console.log(result_pesquisar);
+$.each(result_pesquisar, function(i, field) {
+var nome_busca = field.nome; 
+var avatar_busca = field.avatar; 
+var seguidores_busca = field.seguidores;
+var equipe_busca = field.equipe;
+var modalidade_busca = field.modalidade;
+var email_busca = field.email;
+
+var sobrenome_busca = field.sobrenome; 
+$(".resultado_busca").append("<li class='busca_listas' style='display:none;margin-bottom:5px;'><a href='perfil.html?perfil="+ email_busca +"'><img class='img_busca' src=http://hostplasma.com.br/raise/sample.php?url="+ avatar_busca +"&width=100&height=100>"+ nome_busca +" "+ sobrenome_busca +" <small>("+ modalidade_busca +")</small><br><i class='fa fa-users'></i> "+ seguidores_busca +" <div class='equipe2'>equipe <img src="+ equipe_busca +"></div></a></li>");  
+});
+});
+	
+
+    
+    
+
+	
+	
+// LEIO AS INFORMAÇÕES DO PERFIL E AS ATIVIDADES
+$.fn.informacoes_perfil = function () {
+var url_pesquisar = "http://hostplasma.com.br/raise/le_perfil.php?nocache=" + Math.random() + "&email=" + login + "";
+$.getJSON(url_pesquisar, function(result_pesquisar) {
+console.log(result_pesquisar);
+$.each(result_pesquisar, function(i, field) {
+var nome = field.nome; 
+var id = field.id; 
+var sobrenome = field.sobrenome;            
+var modalidade = field.modalidade;
+var graduacao = field.graduacao;
+var inicio_atividade = field.inicio_atividade;
+var avatar = field.avatar;
+var graduacao = field.graduacao;
+var inicio_atividade = field.inicio_atividade;
+var usuario = field.usuario;
+var seguidores = field.seguidores;	
+var dataNascimento = field.inicio_atividade;
+var calcula_ano = (calcularIdade(dataNascimento));	
+var ouro = field.ouro; 
+var prata = field.prata;            
+var bronze = field.bronze;
+var equipe = field.equipe;
+
+// calcular os anos	
+function calcularIdade(aniversario) {
+var nascimento = aniversario.split("/");
+var dataNascimento = new Date(parseInt(nascimento[2], 10),
+parseInt(nascimento[1], 10) - 1,
+parseInt(nascimento[0], 10));
+var diferenca = Date.now() -  dataNascimento.getTime();
+var idade = new Date(diferenca); // miliseconds from epoch
+return Math.abs(idade.getUTCFullYear() - 1970);}
+// calcular os anos		
+$(".seguindo").append(""+ nome +""); 
+$(".nome_perfil_jquery").append(""+ nome +""); 
+$(".usuario_jquery").append("@"+ usuario +""); 
+$(".modalidade_jquery").append(""+ modalidade +"");   
+$(".sobrenome_jquery").append(""+ sobrenome +"");   
+$(".avatarr").append(" <div style='float: left;'  class='unhover_img'><img class='pego_infos' email_logado_principal='"+ email_logado_principal +"' id_usuario='"+ field.id +"'  src=http://hostplasma.com.br/raise/sample.php?url="+ avatar +"&width=800&height=800></div>");   
+$(".graduacao_jquery").append("<i class='fa fa-graduation-cap'></i> "+ graduacao +"");   
+$(".inicio_atividade").append("<i class='fa fa-clock-o'></i> "+ calcula_ano +" Anos");   
+$(".seguidores_jquery").append("<i class='fa fa-users'></i> "+ seguidores +""); 
+    
+
+    
+    
+    
+    
+ if (field.equipe === '') {    
+$(".equipe_menuzinho").append("<div style='width:32px;right:25px;position:absolute;text-align:center;font-size:9px;padding-top:20px;'>equipe <img id='EQUIPE_BOTAOO' style='padding-top: 3px;' src='img/equipe.png'></div>"); 
+
+} else { 
+
+    
+        // LEIO AVATAR DA EQUIPE
+var url_pesquisar = "http://hostplasma.com.br/raise/le_equipe.php?nocache=" + Math.random() + "&id=" + field.equipe + "";
+$.getJSON(url_pesquisar, function(result_pesquisar) {
+console.log(result_pesquisar);
+$.each(result_pesquisar, function(i, field) {
+
+var avatar = field.avatar; 
+        $(".equipe_menuzinho").append("<a href='equipe.html?id="+ field.id +"'><div style='width:32px;right:25px;position:absolute;text-align:center;font-size:9px;padding-top:20px;'>equipe <img style='padding-top: 3px;' src='"+avatar+"'></div></a>"); 
+
+});
+});
+    
+    
+    
+
+
+
+}  
+    
+
+    if (perfil === undefined) {
+$(".raises").append("<i class='fa fa-bolt'></i> "+ field.raises +"");   
+
+} else { 
+    
+
+}	
+                
+    
+    
+$(".ouro_perfil").append(""+ ouro +""); 
+$(".prata_perfil").append(""+ prata +""); 
+$(".bronze_perfil").append(""+ bronze +"");  
+//$(".equipe_perfil").append("");  
+	
+// Wait for PhoneGap to load
+      document.addEventListener("deviceready", onDeviceReady, false);
+
+      // PhoneGap is ready
+      function onDeviceReady() {
+          console.log("device ready");
+          // Do cool things here...
+		//  		document.addEventListener("backbutton", onBackKeyDown, false);
+
+		  
+      }
+
+///		function onBackKeyDown() {
+  //  window.history.back();
+//}
+
+	
+	
+     function getCamera() {
+		 		 
+          // Retrieve image file location from specified source
+          navigator.camera.getPicture(uploadPhoto, function(message) {
+                     // alert('get picture failed');
+                  },{
+                      quality: 50,
+                      destinationType: navigator.camera.DestinationType.FILE_URI,
+                      sourceType: navigator.camera.PictureSourceType.CAMERA
+                  }
+          );
+
+      }
+	
+	
+	function getImage() {
+		
+          // Retrieve image file location from specified source
+          navigator.camera.getPicture(uploadPhoto, function(message) {
+                    //  alert('get picture failed');
+                  },{
+                      quality: 50,
+                      destinationType: navigator.camera.DestinationType.FILE_URI,
+                      sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+                  }
+          );
+
+      }
+
+      function uploadPhoto(imageURI) {
+		  
+		  
+          var options = new FileUploadOptions();
+          options.fileKey="file";
+          options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+          options.mimeType="image/jpeg";
+
+          var params = new Object();
+          params.value1 = "test";
+          params.value2 = "param";
+
+          options.params = params;
+          options.chunkedMode = false;
+
+		  $('#image').attr('src', imageURI);     
+
+	          var ft = new FileTransfer();
+		 	  var email_cadastrado = $('input[name=email]').val()
+          ft.upload(imageURI, "http://hostplasma.com.br/raise/UPLOAD2.php?email="+email_cadastrado+"", win, fail, options);
+		  
+setTimeout(
+  function() 
+  {
+	$("#progresso").animate({ value: "20" });
+  }, 1000); 
+				  
+		  
+      }
+
+      function win(r) {
+          console.log("Code = " + r.responseCode.toString()+"\n");
+          console.log("Response = " + r.response.toString()+"\n");
+          console.log("Sent = " + r.bytesSent.toString()+"\n");
+	//	alert('fuii');
+		  	$("#progresso").animate({ value: "100" });
+
+      }
+
+      function fail(error) {
+          alert("Ops, Algo deu errado.. Tente enviar novamente!" + error.code);
+      }	
+	
+	
+	
+	
+/*
+      // Wait for PhoneGap to load
+      document.addEventListener("deviceready", onDeviceReady, false);
+
+      // PhoneGap is ready
+      function onDeviceReady() {
+          console.log("device ready");
+          // Do cool things here...
+      }
+	
+$(document).ready(function(){
+  $(document).bind('deviceready', function(){
+
+  function sendImage(src) {
+
+    src = (src == 'library') ? Camera.PictureSourceType.PHOTOLIBRARY : Camera.PictureSourceType.CAMERA;
+    navigator.camera.getPicture(success, fail, {quality: 100, sourceType: src});
+
+                             function success(imageData) {
+                             var url = 'http://hostplasma.com.br/raise/UPLOAD.php';
+                             var params = {image: imageData};
+
+                             // send the data
+                             $.post(url, params, function(data) {
+                                     alert(imageData);
+                                     // Display the selected image on send complete
+								  $('#image').attr('src', params['image']);     
+                             });
+                             }
+}
+
+  function fail(message) { alert(message); }
+
+  $('.send-image').click(function () { sendImage($(this).val()); });
+
+  });
+}); 	
+		
+*/	
+	
+function alertDismissed(){}
+
+//  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA 
+$( "#CADASTRAR_AGENDA" ).click(function() {
+    
+var checkbox_value = "";
+$(":checkbox").each(function () {
+var ischecked = $(this).is(":checked");
+if (ischecked) {
+checkbox_value += $(this).val() + "|";}});
+if(document.forms['cadastrar_agenda'].compromisso_ati.value === "0" || document.forms['cadastrar_agenda'].modalidade_agenda.value === "0" || document.forms['cadastrar_agenda'].como_age.value === "" || document.forms['cadastrar_agenda'].hora_inicio_age.value === "" || document.forms['cadastrar_agenda'].hora_fim_age.value === "" ){  
+// mobile
+//alert ('preencha todos os campos');
+navigator.notification.alert('Preencha todos os campos', alertDismissed, 'RAISE','OK');
+return false;}
+var formData = {
+'dias'                   : checkbox_value,
+'compromisso_ati'          : $('select[name=compromisso_ati]').val(),
+    
+    'inicio_atividade_age'          : $('input[name=inicio_atividade_age]').val(),
+
+    'modalidade_agenda'           	 : $('select[name=modalidade_agenda]').val(),
+    
+'como_age'          		 : $('select[name=como_age]').val(),
+'hora_inicio_age'       	 : $('input[name=hora_inicio_age]').val(),
+'hora_fim_age'     	 		 : $('input[name=hora_fim_age]').val(),
+'local_age'    				 : $('#name_textarea').val()};
+    
+ 
+$.ajax({
+type        : 'POST',
+url         : "http://hostplasma.com.br/raise/CADASTRAR_AGENDA.php?nocache=" + Math.random() + "&id=" + id + "",
+data        : formData,
+crossDomain: true,
+cache: false,
+beforeSend: function() {
+//$("#enviar_usuarios").text('Verificando...');
+}, 
+success: function(data) {
+if (data == "success") {
+navigator.notification.alert('Agenda cadastrada com sucesso!', alertDismissed, 'RAISE','OK');
+$('.adicionar_agenda').animate({opacity: 0}, 500).hide(0);
+location.reload();
+return;
+} else if (data == "error") {     
+navigator.notification.alert('Erro, tente novamente!', alertDismissed, 'RAISE','OK');
+return;}}	   });	});
+//  CADASTRAR_AGENDA  //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA 
+    
+    
+    
+			
+//  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  
+$( "#CADASTRAR_ATIVIDADE" ).click(function() {
+var checkbox_value = "";
+$(":checkbox").each(function () {
+var ischecked = $(this).is(":checked");
+if (ischecked) {
+checkbox_value += $(this).val() + "|";}});
+if(document.forms['cadastrar_atividade'].atividade_ati.value === "1" || document.forms['cadastrar_atividade'].modalidade.value === "0" || document.forms['cadastrar_atividade'].como.value === "" || document.forms['cadastrar_atividade'].modalidade.hora_fim === "" || document.forms['cadastrar_atividade'].hora_fim.value === "" ){  
+// mobile
+//alert ('preencha todos os campos');
+navigator.notification.alert('Preencha todos os campos', alertDismissed, 'RAISE','OK');
+return false;}
+var formData = {
+'atividade_ati'      : $('select[name=atividade_ati]').val(),
+'dias'                   : checkbox_value,
+'compromisso_ati'          : $('select[name=compromisso_ati]').val(),
+'modalidade'           	 : $('select[name=modalidade]').val(),
+'como'          		 : $('select[name=como]').val(),
+'hora_inicio'       	 : $('input[name=hora_inicio]').val(),
+'hora_fim'     	 		 : $('input[name=hora_fim]').val(),
+'local'    				 : $('input[name=local]').val()};
+$.ajax({
+type        : 'POST',
+url         : "http://hostplasma.com.br/raise/CADASTRAR_ATIVIDADE.php?nocache=" + Math.random() + "&id=" + id + "",
+data        : formData,
+crossDomain: true,
+cache: false,
+beforeSend: function() {
+//$("#enviar_usuarios").text('Verificando...');
+}, 
+success: function(data) {
+if (data == "success") {
+navigator.notification.alert('Atividade cadastrada com sucesso!', alertDismissed, 'RAISE','OK');
+$('.adicionar_atividades').animate({opacity: 0}, 500).hide(0);
+location.reload();
+return;
+} else if (data == "error") {     
+navigator.notification.alert('Erro, tente novamente!', alertDismissed, 'RAISE','OK');
+return;}}	   });	});
+//  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  CADASTRAR_ATIVIDADE ////  CADASTRAR_ATIVIDADE // //  	
+	
+
+	
+
+    
+   	
+// LEIO FEeD
+var url_pesquisar = "http://hostplasma.com.br/raise/LE_FEED.php?nocache=" + Math.random() + "&id_usuario=" + id + "";
+$.getJSON(url_pesquisar, function(result_pesquisar) {
+console.log(result_pesquisar);
+$.each(result_pesquisar, function(i, field) {         
+
+    
+    
+    
+switch (field.categoria) {
+	case "Atividade":
+		var borda = "<blockquote><img  class='feed_img' align='middle' style='border: 2px solid #8bc34a;padding:2px;margin-right: 5px;' src='http://hostplasma.com.br/raise/sample.php?url="+field.avatar+"&width=50&amp;height=50'><p> <b>"+field.nome+" "+field.sobrenome+"</b> está "+field.atividade+" <span>"+field.modalidade+"</span> como <span>"+field.como+"</span> no periodo das "+field.hr_inicio+" ~ "+field.hr_fim+" de "+field.dias+" </p></blockquote>";
+		break
+	case "Agenda":
+		var borda = "<blockquote><img  class='feed_img' align='middle' style='border: 2px solid #ff850c;padding:2px;margin-right: 5px;' src='http://hostplasma.com.br/raise/sample.php?url="+field.avatar+"&width=50&amp;height=50'><p> <b>"+field.nome+" "+field.sobrenome+"</b> está "+field.atividade+" <span>"+field.modalidade+"</span> como <span>"+field.como+"</span> no periodo das "+field.hr_inicio+" ~ "+field.hr_fim+" no dia "+field.dias+" </p></blockquote>";
+		break
+	case "Campanha":
+		var borda = "<blockquote><img  class='feed_img' align='middle' style='border: 2px solid #E91E63;padding:2px;margin-right: 5px;' src='http://hostplasma.com.br/raise/sample.php?url="+field.avatar+"&width=50&amp;height=50'><p> <b>"+field.nome+" "+field.sobrenome+"</b> adicionou uma nova campanha <span>"+field.atividade+"</span> na data  "+field.hr_inicio+" ~ "+field.hr_fim+" no valor de R$"+field.como+" </p></blockquote>";
+		break
+	case "Galeria":
+		var borda = "<blockquote><img  class='feed_img' align='middle' style='border: 2px solid #ff850c;padding:2px;margin-right: 5px;' src='http://hostplasma.com.br/raise/sample.php?url="+field.avatar+"&width=50&amp;height=50'><p> <b>"+field.nome+" "+field.sobrenome+"</b> está "+field.atividade+" <span>"+field.modalidade+"</span> como <span>"+field.como+"</span> no periodo das "+field.hr_inicio+" ~ "+field.hr_fim+" de "+field.dias+" </p></blockquote>";
+		break
+	case "Medalhas":
+		var borda = "<blockquote><img  class='feed_img' align='middle' style='border: 2px solid #CDDC39;padding:2px;margin-right: 5px;' src='http://hostplasma.com.br/raise/sample.php?url="+field.avatar+"&width=50&amp;height=50'><p> <b>"+field.nome+" "+field.sobrenome+"</b> adicionou uma nova medalha de <span>"+field.modalidade+"</span> no <span>"+field.atividade+"</span> na categoria "+field.como+" em "+field.dias+" </p></blockquote>";
+		break
+	default:
+		var borda = "<blockquote><img  class='feed_img' align='middle' style='border: 2px solid #ff850c;padding:2px;margin-right: 5px;' src='http://hostplasma.com.br/raise/sample.php?url="+field.avatar+"&width=50&amp;height=50'><p> <b>"+field.nome+" "+field.sobrenome+"</b> está "+field.atividade+" <span>"+field.modalidade+"</span> como <span>"+field.como+"</span> no periodo das "+field.hr_inicio+" ~ "+field.hr_fim+" de "+field.dias+" </p></blockquote>";
+
+}          
+    
+$(".feed_injeta").append(""+borda+""); 
+
+});  
+})	 
+// LEIO FEeD
+
+    
+    
+    
+    
+    
+// leio atividades 	// leio atividades 	// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio ativid
+
+var url_pesquisar = "http://hostplasma.com.br/raise/LE_ATIVIDADES_USUARIOS.php?nocache=" + Math.random() + "&id_usuario=" + id + "";
+$.getJSON(url_pesquisar, function(result_pesquisar) {
+console.log(result_pesquisar);
+$.each(result_pesquisar, function(i, field) {
+
+var como = field.como; 
+var atividade = field.atividade; 
+var id_atividade = field.id; 
+
+var hora_inicio = field.hora_inicio; 
+var hora_fim = field.hora_fim;            
+var data = field.data;
+var dias = field.dias;
+var esporte = field.esporte;
+var local = field.local;
+var id_usuario = field.id_usuario;             
+                
+switch (esporte) {
+	case "1":
+		var esporte = "NATACAO";
+		var icone	  = "natacao.png";
+		break
+	case "2":
+		var esporte = "CORRIDA";
+		var icone	  = "correndo.png";
+		break
+	case "3":
+		var esporte = "ACADEMIA";
+		var icone	  = "academia.png";
+		break
+	case "4":
+		var esporte = "CROSS FIT";
+		var icone	  = "crossfit.png";
+		break
+	case "5":
+		var esporte = "BICICLETA";
+		var icone	  = "bicicleta.png";
+		break
+	case "6":
+		var esporte = "FUTEBOL";
+		var icone	  = "futebol.png";
+		break
+	case "7":
+		var esporte = "SURF";
+		var icone	  = "surf.png";
+		break
+	case "8":
+		var esporte = "SKATE";
+		var icone	  = "skateboard.png";
+		break
+	case "9":
+		var esporte = "DESCANSO";
+		var icone	  = "dormindo.png";
+		break
+	default:
+		var esporte = "OUTROS";
+		var icone	  = "outros.png";
+
+}          
+
+    
+    $(".atividades_usuario").append("<div class='atividades_usuarioss'><a id='"+ id_atividade +"' href='javascript:void();' class='delbutton'><small class='delbuttonp' style='float:right;'><i class='fa fa-times'></i></small></a><img style='width:64px;float: left;MARGIN-RIGHT: 10px;' src='img/"+ icone +"'><b style='font-family: 'PT Sans Narrow', sans-serif;'>"+ esporte +"</b> ("+ como +")<br><small>"+ local +"</small><br><small>"+ atividade +"</small> - <small>"+ hora_inicio +" / "+ hora_fim +"</small><br><small>"+ dias +"</small></div>"); 
+
+        // <small style='float:right;'>"+ data +"</small>
+});
+    
+    
+  if (perfil === undefined) {
+
+} else { 
+    
+$( ".delbuttonp" ).hide();
+}	
+      
+    
+   
+$(".delbutton").click(function(){ 
+    
+var del_id = $(this).attr('id');
+var info = 'id=' + del_id;
+$.ajax({
+type: "POST",
+url: "http://hostplasma.com.br/raise/DELETAR_ATIVIDADES.php",
+data: info,
+success: function(){
+}
+});
+$(this).parents(".atividades_usuarioss").animate({ backgroundColor: "#fbc7c7" }, "fast")
+.animate({ opacity: "hide" }, "slow");
+return false;
+});       
+    
+})	 
+// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades// leio atividades 	// leio atividades	
+    
+    
+    
+  
+
+    
+    
+    
+    
+    
+// LEIO AGENDA // LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA      
+var url_pesquisar = "http://hostplasma.com.br/raise/LE_AGENDA_USUARIOS.php?nocache=" + Math.random() + "&id_usuario=" + id + "";
+$.getJSON(url_pesquisar, function(result_pesquisar) {
+console.log(result_pesquisar);
+$.each(result_pesquisar, function(i, field) {
+
+var como = field.como; 
+var atividade = field.atividade; 
+var id_atividade = field.id; 
+
+var hora_inicio = field.hora_inicio; 
+var hora_fim = field.hora_fim;            
+var data = field.data;
+var dias = field.dias;
+var esporte = field.esporte;
+var local = field.local;
+var id_usuario = field.id_usuario;             
+                
+switch (esporte) {
+	case "1":
+		var esporte = "NATACAO";
+		var icone	  = "natacao.png";
+		break
+	case "2":
+		var esporte = "CORRIDA";
+		var icone	  = "correndo.png";
+		break
+	case "3":
+		var esporte = "ACADEMIA";
+		var icone	  = "academia.png";
+		break
+	case "4":
+		var esporte = "CROSS FIT";
+		var icone	  = "crossfit.png";
+		break
+	case "5":
+		var esporte = "BICICLETA";
+		var icone	  = "bicicleta.png";
+		break
+	case "6":
+		var esporte = "FUTEBOL";
+		var icone	  = "futebol.png";
+		break
+	case "7":
+		var esporte = "SURF";
+		var icone	  = "surf.png";
+		break
+	case "8":
+		var esporte = "SKATE";
+		var icone	  = "skateboard.png";
+		break
+	case "9":
+		var esporte = "DESCANSO";
+		var icone	  = "dormindo.png";
+		break
+	default:
+		var esporte = "OUTROS";
+		var icone	  = "outros.png";
+
+}          
+
+    
+    $(".agenda_usuario").append("<div class='atividades_usuarioss'><a id='"+ id_atividade +"' href='javascript:void();' class='delbutton_agenda'><div class='delbuttonp' style='float:right;'><i class='fa fa-times'></i></div></a><img style='width:64px;float: left;MARGIN-RIGHT: 10px;' src='img/calendario.png'><b style='font-family: 'PT Sans Narrow', sans-serif;'>"+ atividade +"</b> ("+ esporte +" "+ como +")<br><small>"+ local +"</small><br><small>"+ data +" - "+ hora_inicio +" / "+ hora_fim +"</small><br><small>"+ dias +"</small></div>"); 
+
+        // <small style='float:right;'>"+ data +"</small>
+});
+    
+    
+    
+if (perfil === undefined) {
+
+} else { 
+    
+$( ".delbuttonp" ).hide();
+}	
+    
+    
+    
+    
+    
+    
+$(".delbutton_agenda").click(function(){ 
+var del_id_2 = $(this).attr('id');
+var info = 'id_2=' + del_id_2;
+$.ajax({
+type: "POST",
+url: "http://hostplasma.com.br/raise/DELETAR_AGENDA.php",
+data: info,
+success: function(){
+}
+});
+$(this).parents(".atividades_usuarioss").animate({ backgroundColor: "#fbc7c7" }, "fast")
+.animate({ opacity: "hide" }, "slow");
+return false;
+});      
+    
+    
+    
+})	 
+    
+// LEIO AGENDA // LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA// LEIO AGENDA    
+    
+    
+    
+    
+    
+    
+});
+})
+	
+;};	
+	
+    
+$('').informacoes_perfil();
+// LEIO AS INFORMAÇÕES DO PERFIL 
+    
+    
+    
+    
+    
+	
+    </script>
+
+  <!--
+	<form id="regform">
+        <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">Select Photo:</button><br>
+        <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+
+        <input type="button" id="btnSubmit" value="Submit" onclick="uploadPhoto();">
+    </form>
+	-->
+	
+	
+
+</div> 
+
+
+	<p>&nbsp;</p>
+	
+
+
+	</div>
+	<!-- /#content -->
+
+
+</div>
+</div>
+
+</div>
+	
+
+	</div>
+	<!-- END body -->
+
+</div>
+	
+	
+	<!-- 
+	
+<form class="cadastrar_parte1" name="cadastrar_parte1" action="javascript:void()"  style="margin-top: 5px;">
+<h6 style="font-size: 0.9em;text-align: center;margin: 0;padding: 0;">Ainda não tem uma conta?</h6>
+<p style="text-align: center;font-size: 14px;">Cadastre-se, Agora!</p>
+<div style="width:100%;text-align:center;"><hr class="minidivider" style="max-width:45px"></div>
+	<div class="contactform-wrapper">	
+	<div class="name-wrapper"><input  type="text" name="nome" id="name" required placeholder="Nome" /></div>
+	<div class="name-wrapper"><input  type="text" name="sobrenome" id="name" required placeholder="Sobrenome" /></div>
+	<div class="name-wrapper"><input  type="text" name="email" id="mail" required placeholder="Email" /></div>
+	<!--<div class="name-wrapper"><input  type="text" name="usuario" id="name" required placeholder="Usuario" /></div>
+	<div class="name-wrapper"><input  type="password" name="senha" value="" required id="name" placeholder="Senha" /></div>
+		<p>&nbsp;</p>
+	<div style="text-align: center;">
+		<a href="#" class="avansar"><span class="buttonred" style="border-radius:1px;font-size:12px;display:inline-block;">CONTINUAR >></span></a>
+		<a href="#" id="voltar"><span class="buttonorange" style="border-radius:1px;font-size:12px;display:inline-block;">VOLTAR</span></a>
+	</div>	
+		<p>&nbsp;</p>
+	</div>
+</form>    
+    
+    <!-- parte de editar o perfil -->
+
+    
+	
+	
+	
+	
+<section class="adicionar_atividades" style="z-index: 999999;">
+<form class="cadastrar_parte1" name="cadastrar_atividade" action="javascript:void()" style="margin-top: 5px;">
+<h6 style="font-size: 0.9em;text-align: center;margin: 0;padding: 0;">CADASTRE SUAS ATIVIDADES</h6>
+<p style="text-align: center;font-size: 14px;">Preencha as informações</p>
+<div style="width:100%;text-align:center;"><hr class="minidivider" style="max-width:45px"></div>
+<div class="contactform-wrapper">
+<select id="name" name="atividade_ati" class="formulario_p2 ip1" style="margin-left: 10px;width: 98%;">
+<option value="1">Qual a atividade?</option>
+<option value="Treinando">Treinando</option>
+<option value="Dando aula">Dando aula</option>
+<option value="Praticando">Praticando</option>
+<option value="Recuperando">Recuperando</option>
+</select>	
+<select id="name" name="modalidade" class="formulario_p2 ip1" style="margin-left: 10px;width: 98%;">
+<option value="0">Qual a modalidade?</option>
+<option value="1">Natação</option>
+<option value="2">Corrida</option>
+<option value="3">Academia</option>
+<option value="4">Crossfit</option>
+<option value="5">Bicileta</option>
+<option value="6">Futebol</option>
+<option value="7">Surf</option>
+<option value="8">Skate</option>
+<option value="9">Descanso</option>
+<option value="">Outros</option>
+</select>
+<select id="name" name="como" class="formulario_p2 ip1" style="margin-left: 10px;width: 98%;">
+<option value="">Como:</option>
+<option value="Atleta">Atleta</option>
+<option value="Coach">Coach</option>
+<option value="Outros">Outros</option>
+</select>		
+<div class="name-wrapper">
+<label for="hora_inicio" class="labels">Hora do inicio</label>
+<input class="horas" type="time" name="hora_inicio" id="name" onclick="calendario()" required="" placeholder="Hora do inicio"></div>
+<div class="name-wrapper">
+<label for="hora_fim" class="labels">Hora do fim</label>
+<input class="horas" type="time" name="hora_fim" id="name" required="" placeholder="Hora do fim"></div>
+<div class="name-wrapper"><input type="text" name="local" id="name" required="" placeholder="Local"></div>
+<div style="    color: #757575;
+font-size: 13px;
+text-align: center;
+padding: 20px;" class="name-wrapper">
+<p>Quais os dias?</p>
+<input style="vertical-align: middle;" type="checkbox" name="vehicle" value="Seg">Segunda
+<input style="vertical-align: middle;" type="checkbox" name="vehicle" value="Terç">Terça
+<input style="vertical-align: middle;" type="checkbox" name="vehicle" value="Qua">Quarta
+<input style="vertical-align: middle;" type="checkbox" name="vehicle" value="Qui">Quinta<br>
+<input style="vertical-align: middle;" type="checkbox" name="vehicle" value="Sex">Sexta
+<input style="vertical-align: middle;" type="checkbox" name="vehicle" value="Sáb">Sábado
+<input style="vertical-align: middle;" type="checkbox" name="vehicle" value="Dom">Domingo
+</div>	
+<div style="text-align: center;">
+<a href="#" id="CADASTRAR_ATIVIDADE"><span class="buttonred" style="border-radius:1px;font-size:12px;display:inline-block;">CADASTRAR</span></a>
+<a href="#" id="FECHAR_ATIVIDADE"><span class="buttonorange" style="border-radius:1px;font-size:12px;display:inline-block;">FECHAR</span></a>
+</div>	
+<p>&nbsp;</p>
+</div>
+</form>
+</section>
+	
+	
+	
+    
+    
+    
+<!-- ADICIONAR AGENDA -->
+<section class="adicionar_agenda" style="z-index: 999999;">
+<form class="cadastrar_parte1" name="cadastrar_agenda" action="javascript:void()" style="margin-top: 5px;">
+<h6 style="font-size: 0.9em;text-align: center;margin: 0;padding: 0;">USE A AGENDA</h6>
+<p style="text-align: center;font-size: 14px;">mantenha seus dias mais organizados.</p>
+<div style="width:100%;text-align:center;"><hr class="minidivider" style="max-width:45px"></div>
+<div class="contactform-wrapper">
+<select id="name" name="compromisso_ati" class="formulario_p2 ip1" style="margin-left: 10px;width: 98%;">
+<option value="0">Selecione seu compromisso.</option>
+<option value="Viagem">Viagem</option>
+<option value="Seminario">Seminario</option>
+<option value="Visita">Visita</option>
+<option value="Campeonato">Campeonato</option>
+<option value="Torneio">Torneio</option>
+<option value="Copa">Copa</option>
+<option value="Outros">Outros</option>
+</select>	
+<select id="name" name="modalidade_agenda" class="formulario_p2 ip1" style="margin-left: 10px;width: 98%;">
+<option value="0">Qual a modalidade?</option>
+<option value="1">Natação</option>
+<option value="2">Corrida</option>
+<option value="3">Academia</option>
+<option value="4">Crossfit</option>
+<option value="5">Bicileta</option>
+<option value="6">Futebol</option>
+<option value="7">Surf</option>
+<option value="8">Skate</option>
+<option value="9">Descanso</option>
+<option value="">Outros</option>
+</select>
+<select id="name" name="como_age" class="formulario_p2 ip1" style="margin-left: 10px;width: 98%;">
+<option value="">Como:</option>
+<option value="Atleta">Atleta</option>
+<option value="Coach">Coach</option>
+<option value="Outros">Outros</option>
+</select>		
+<div class="formulario_p2"><input type="date" name="inicio_atividade_age" value="" class="atividade name_textarea" placeholder="dd/mm/aaa"></div>
+<div class="name-wrapper"><input class="horas" type="time" name="hora_inicio_age" id="name" required="" placeholder="Hora do inicio"></div>
+<div class="name-wrapper"><input class="horas" type="time" name="hora_fim_age" id="name" required="" placeholder="Hora do fim"></div>
+<div class="name-wrapper"><textarea class="name_textarea" style="min-height:70px; height: 70px;" name="local_age" id="name_textarea" required="" placeholder="Breve descrição..."></textarea></div>
+<div style="text-align: center;    margin-top: 20px;">
+<a href="#" id="CADASTRAR_AGENDA"><span class="buttonred" style="border-radius:1px;font-size:12px;display:inline-block;">CADASTRAR</span></a>
+<a href="#" id="FECHAR_AGENDA"><span class="buttonorange" style="border-radius:1px;font-size:12px;display:inline-block;">FECHAR</span></a>
+</div>	
+<p>&nbsp;</p>
+</div>
+</form>
+</section>
+<!-- ADICIONAR AGENDA -->
+
+    
+
+	<script src="java/menu.js"></script>
+    <script src="java/menu_flutuante.js"></script>
+    <script src="java/busca.js"></script>
+    <script src="java/jquery.mask.js"></script>
+    <script src="java/seguir.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+    // MASCARA PARA HORAS
+        $('.horas').mask('99:99');
+	
+		
+$('.adicionar_atividades').hide();
+$('.adicionar_agenda').hide();
+
+$( "#PROFILE" ).click(function() {
+window.location.href = "perfil.html";		
+});	
+		
+$( ".ADD_ATIVIDADE" ).click(function() {
+    $('.adicionar_atividades').slideDown(100).animate({opacity: 1}, 300);
+	
+});
+        
+$( ".ADD_AGENDA" ).click(function() {
+    $('.adicionar_agenda').slideDown(100).animate({opacity: 1}, 300);
+	
+});	
+				
+$("#FECHAR_ATIVIDADE").click(function() {
+	$('.adicionar_atividades').animate({opacity: 0}, 500).hide(0);
+});	
+		
+$("#FECHAR_AGENDA").click(function() {
+	$('.adicionar_agenda').animate({opacity: 0}, 500).hide(0);
+});		
+			
+});
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+
+  <body onload="onLoad()">
+
+</div></div>
+</body>
+</html>

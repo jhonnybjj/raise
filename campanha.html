@@ -1,0 +1,257 @@
+<style type="text/css">
+
+    .ADD_CAMPANHA {    padding: 10px;
+    line-height: 1.1;
+    background: #fff;
+    margin: 15px;
+    border: 1px #000 dashed;
+    text-align: center;}
+
+</style>
+
+<script>
+	$(document).ready(function(){
+        
+        
+
+
+
+        
+        
+    $('.adicionar_campanha').hide();
+
+        
+        
+$( "#FECHAR_CAMPANHA" ).click(function() {
+	$('.adicionar_campanha').animate({opacity: 0}, 500).hide(0);    
+    $("#load_campanha").load("campanha.html"); 
+    $('#load_campanha').slideDown(200).animate({opacity: 1}, 100);
+    $(".feed,.atividades,.agenda,.galeria").css('display','none');
+
+});           
+        
+$( ".ADD_CAMPANHA" ).click(function() {
+    $('.adicionar_campanha').slideDown(100).animate({opacity: 1}, 300);
+    $('.campanhaa').hide();    
+    
+});
+        
+   
+        
+});
+    
+   
+    
+    
+    //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA 
+$( "#CADASTRAR_CAMPANHA" ).click(function() {       
+    
+    
+
+
+    
+    
+            function alertDismissed(){}
+
+if(document.forms['CADASTRAR_CAMPANHA'].titulo_cp.value === "" ||
+   document.forms['CADASTRAR_CAMPANHA'].valor_campanha_cp.value === "" ||
+   document.forms['CADASTRAR_CAMPANHA'].descricao_cp.value === "" ||
+   document.forms['CADASTRAR_CAMPANHA'].data_inicio_cp.value === "" || 
+   document.forms['CADASTRAR_CAMPANHA'].data_termino_cp.value === "" ){  
+
+  // alert ('preencha todos os campos');
+navigator.notification.alert('Preencha todos os campos', alertDismissed, 'RAISE','OK');
+return false;}
+var formData = {
+'titulo_cp'                      : $('input[name=titulo_cp]').val(),
+'valor_campanha_cp'              : $('input[name=valor_campanha_cp]').val(),
+ 'data_inicio_cp'                : $('input[name=data_inicio_cp]').val(),
+'data_termino_cp'           	 : $('input[name=data_termino_cp]').val(),
+'descricao_cp'          		 : $('input[name=descricao_cp]').val()
+};
+    
+  
+                     
+// LEIO ID 
+var url_le = "http://hostplasma.com.br/raise/le_perfil.php?nocache=" + Math.random() + "&email=" + login + "";
+$.getJSON(url_le, function(result_le) {
+console.log(result_le);
+$.each(result_le, function(i, field) {         
+window.localStorage.setItem('id_usuario_logado1', field.id);
+var id_usuario_logado1 = window.localStorage.getItem('id_usuario_logado1');
+    
+ //   alert(id_usuario_logado1);
+
+// LEIO ID 
+    
+    
+    
+$.ajax({
+type        : 'POST',
+url         : "http://hostplasma.com.br/raise/CADASTRAR_CAMPANHA.php?nocache=" + Math.random() + "&email=" + login + "&id=" + id_usuario_logado1 + "",
+data        : formData,
+crossDomain: true,
+cache: false,
+beforeSend: function() {
+//$("#enviar_usuarios").text('Verificando...');
+}, 
+success: function(data) {
+if (data == "success") {
+navigator.notification.alert('Campanha cadastrada com sucesso!', alertDismissed, 'RAISE','OK');
+$('.adicionar_campanha').animate({opacity: 0}, 500).hide(0);
+location.reload();
+return;
+} else if (data == "error") {     
+navigator.notification.alert('Erro, tente novamente!', alertDismissed, 'RAISE','OK');
+return;}}	   });	});
+    
+    // fecho os 2 leio id
+    });  
+});	 
+    // fecho os 2 leio id
+
+$.fn.campanha_perfil = function () {
+
+var url_pesquisar = "http://hostplasma.com.br/raise/LE_CAMPANHA.php?nocache=" + Math.random() + "&email=" + login + "";    
+$.getJSON(url_pesquisar, function(result_pesquisar) {
+console.log(result_pesquisar);
+$.each(result_pesquisar, function(i, field) {
+  
+$(".campanha_perfil_usuario").append(
+"<div class='atividades_usuarioss'><a id='"+ field.id +"' href='javascript:void();' class='delbutton_bt'><div class='delbutton' style='float:right;'><i class='fa fa-times'></i></div></a><img style='width:64px;float: left;MARGIN-RIGHT: 10px;' src='img/icon-campanha.png'><small>"+ field.titulo +"<br>Inicio da campanha: <b>"+ field.inicio +"</b> <br>Fim da campanha: <b>"+ field.fim +"</b> <br> <b>"+ field.descricao +"</b></small><i class='fa fa-bolt' style='float: right;'><small> "+ field.valor +" / "+ field.valor_arecadado +"<small></i></div>");  
+});
+       
+if (perfil === undefined) {
+} else { 
+$( ".delbutton_medalhas" ).hide();
+$( ".ADD_CAMPANHA" ).hide();  
+}	
+      
+$(".delbutton_bt").click(function(){ 
+//CAPITURO AS INFOS    
+var id = $(this).attr('id');    
+$.ajax({
+type: "POST",
+url: "http://hostplasma.com.br/raise/DELETAR_CAMPANHA.php",
+//AQUI PASSO AS DATAS  
+data: {id: id},
+success: function(){}});
+$(this).parents(".atividades_usuarioss").animate({ backgroundColor: "#fbc7c7" }, "fast")
+.animate({ opacity: "hide" }, "slow");
+return false;});  
+});
+}
+
+$('').campanha_perfil();
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+         
+/*
+var url_meda = "http://hostplasma.com.br/raise/LE_MEDALHAS_BOTAO.php?nocache=" + Math.random() + "&id_usuario=" + id + "";
+        
+$.getJSON(url_meda, function(result_meda) {
+console.log(result_meda);
+$.each(result_meda, function(i, field) {
+       alert('po');
+
+var categoria     = field.categoria; 
+var peso          = field.peso; 
+var data_medalha  = field.data_medalha; 
+var descricao     = field.descricao; 
+var colocacao     = field.colocacao; 
+var id_usuario    = field.id_usuario; 
+
+                
+switch (colocacao) {
+	case "1":
+		var colocacao = "OURO";
+		var icone	  = "ouro.png";
+		break
+	case "2":
+		var colocacao = "PRATA";
+		var icone	  = "prata.png";
+		break
+	case "3":
+		var colocacao = "BRONZE";
+		var icone	  = "bronze.png";
+		break
+	default:
+		var colocacao = "OUTRAS";
+		var icone	  = "outros.png";
+
+}          
+
+    
+    $(".medalhas_perfil_usuario").append("<div class='atividades_usuarioss'><a id='' href='javascript:void();' class='delbutton_agenda'><div class='delbuttonp' style='float:right;'><i class='fa fa-times'></i></div></a><div class='medal'></div><small>"+ descricao +"<br>Cat.: <b>"+ categoria +"</b> <br>Peso: <b>"+ peso +"</b> <br>Data: <b>"+ data_medalha +"</b></small></div>"); 
+
+})     // <small style='float:right;'>"+ data +"</small>
+});    
+    */
+  
+</script>
+
+
+
+
+<link rel='stylesheet'  href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' media='all' />
+
+
+
+<section class='campanhaa' id="atualizar_atividades" style="">
+	<h6 style="text-align: center; padding-top:5px;padding-bottom: 0px;">Campanha</h6>
+	<p style="text-align: center;">Faça sua doação.</p>
+	
+	
+	<div class="ADD_CAMPANHA" id="ADD_CAMPANHA_2">
+		<b style="font-family: 'PT Sans Narrow', sans-serif;" ><i class='fa fa-address-card-o'></i> ADICIONAR</b><br>
+	</div>
+	
+	
+    <div class="campanha_perfil_usuario"></div>
+
+</section>	
+    
+
+
+
+<section class='adicionar_campanha' style="z-index: 999999;">
+<form class="cadastrar_parte1" name="CADASTRAR_CAMPANHA" action="javascript:void()"  style="margin-top: 5px;">
+	<h6 style="font-size: 0.9em;text-align: center;margin: 0;padding: 0;">CADASTRE SUA CAMPANHA</h6>
+<p style="text-align: center;font-size: 14px;">Preencha as informações</p>
+<div style="width:100%;text-align:center;"><hr class="minidivider" style="max-width:45px"></div>
+	<div class="contactform-wrapper">
+	 
+        		
+<input class="horas"  type="text" name="titulo_cp" id="name"  required placeholder="Titulo da campanha" />
+<input class="horas"  type="number" maxlength="6" name="valor_campanha_cp" id="name"  required placeholder="Valor da campanha" />
+
+<div class="name-wrapper">
+    <label for="hora_inicio" class="labels">Inicio da campanha</label>
+<input class="horas"  type="date" name="data_inicio_cp" id="name" required placeholder="Data inicio" /></div>
+        
+ <div class="name-wrapper">
+    <label for="hora_inicio" class="labels">Termino da campanha</label>
+<input class="horas"  type="date" name="data_termino_cp" id="name" required placeholder="Data termino" /></div>       
+		
+		<div class="name-wrapper"><input  type="text" name="descricao_cp" id="name" required placeholder="Descricao" /></div>
+        
+
+	
+	<div style="text-align: center;    margin-top: 20px;">
+		<a href="#" id="CADASTRAR_CAMPANHA"><span class="buttonred" style="border-radius:1px;font-size:12px;display:inline-block;">CADASTRAR</span></a>
+		<a href="#" id="FECHAR_CAMPANHA"><span  class="buttonorange" style="border-radius:1px;font-size:12px;display:inline-block;">FECHAR</span></a>
+	</div>	
+		<p>&nbsp;</p>
+	</div>
+</form>
+	
+	</section>
+	

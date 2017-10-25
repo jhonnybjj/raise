@@ -1,0 +1,483 @@
+<script>
+$(document).ready(function(){
+        
+    // Wait for PhoneGap to load
+      document.addEventListener("deviceready", onDeviceReady, false);
+
+      // PhoneGap is ready
+      function onDeviceReady() {
+          console.log("device ready");
+          // Do cool things here...
+		//  		document.addEventListener("backbutton", onBackKeyDown, false);
+
+		  
+      }
+
+///		function onBackKeyDown() {
+  //  window.history.back();
+//}
+
+	
+	
+     function getCamera() {
+		 		 
+          // Retrieve image file location from specified source
+          navigator.camera.getPicture(uploadPhoto, function(message) {
+                     // alert('get picture failed');
+                  },{
+                      quality: 50,
+                      destinationType: navigator.camera.DestinationType.FILE_URI,
+                      sourceType: navigator.camera.PictureSourceType.CAMERA
+                  }
+          );
+
+      }
+	
+	
+	function getImage() {
+		
+          // Retrieve image file location from specified source
+          navigator.camera.getPicture(uploadPhoto, function(message) {
+                    //  alert('get picture failed');
+                  },{
+                      quality: 50,
+                      destinationType: navigator.camera.DestinationType.FILE_URI,
+                      sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+                  }
+          );
+
+      }
+
+      function uploadPhoto(imageURI) {
+		  
+		  
+          var options = new FileUploadOptions();
+          options.fileKey="file";
+          options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+          options.mimeType="image/jpeg";
+
+          var params = new Object();
+          params.value1 = "test";
+          params.value2 = "param";
+
+          options.params = params;
+          options.chunkedMode = false;
+
+		  $('#image').attr('src', imageURI);     
+
+	          var ft = new FileTransfer();
+		 	  var email_cadastrado = $('input[name=email]').val()
+          ft.upload(imageURI, "http://hostplasma.com.br/raise/UPLOAD2.php?email="+email_cadastrado+"", win, fail, options);
+		  
+setTimeout(
+  function() 
+  {
+	$("#progresso").animate({ value: "20" });
+  }, 1000); 
+				  
+		  
+      }
+
+      function win(r) {
+          console.log("Code = " + r.responseCode.toString()+"\n");
+          console.log("Response = " + r.response.toString()+"\n");
+          console.log("Sent = " + r.bytesSent.toString()+"\n");
+	//	alert('fuii');
+		  	$("#progresso").animate({ value: "100" });
+
+      }
+
+      function fail(error) {
+          alert("Ops, Algo deu errado.. Tente enviar novamente!" + error.code);
+      }	
+	
+	 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    $(document).ready(function () {
+		
+			$.getJSON('cidades_estados.json', function (data) {
+				var items = [];
+				var options = '<option value="0">Escolha seu estado</option>';	
+				$.each(data, function (key, val) {
+					options += '<option value="' + val.nome + '">' + val.nome + '</option>';
+				});					
+				$("#estados").html(options);				
+				
+				$("#estados").change(function () {				
+				
+					var options_cidades = '';
+					var str = "";					
+					
+					$("#estados option:selected").each(function () {
+						str += $(this).text();
+					});
+					
+					$.each(data, function (key, val) {
+						if(val.nome == str) {							
+							$.each(val.cidades, function (key_city, val_city) {
+								options_cidades += '<option value="' + val_city + '">' + val_city + '</option>';
+							});							
+						}
+					});
+					$("#cidades").html(options_cidades);
+					
+				}).change();		
+			
+			});
+		
+		});
+		
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    $('.buscando_equipe').hide();
+    $('.criando_equipe').hide();
+
+        
+        
+$( ".FECHAR" ).click(function() {
+	$('.criando_equipe').animate({opacity: 0}, 500).hide(0);    
+    $("#equipe_load").load("equipe_sem.html"); 
+    $('#equipe_load').slideDown(200).animate({opacity: 1}, 100);
+    $(".feed,.atividades,.agenda,.campanha,.galeria,#quadro_medalha_load").css('display','none');
+
+});           
+        
+$( "#criar_equipe" ).click(function() {
+    $('.criando_equipe').slideDown(100).animate({opacity: 1}, 300);
+    $('.quadro_de_medalhas').hide();    
+    
+});
+        
+  $( "#buscar_equipe" ).click(function() {
+    $('.buscando_equipe').slideDown(100).animate({opacity: 1}, 300);
+    $('.quadro_de_medalhas').hide();    
+    
+}); 
+        
+});
+    
+   
+    
+    
+    //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA 
+$( "#CRIAR_EQUIPE_BT" ).click(function() {
+    
+            function alertDismissed(){}
+
+if(document.forms['FORM_EQUIPE'].nome_equipe.value === "" ||
+   document.forms['FORM_EQUIPE'].estados.value === "0" ||
+   document.forms['FORM_EQUIPE'].modalidade_equipe.value === "0" ){  
+
+ alert ('preencha todos os campos');
+navigator.notification.alert('Preencha todos os campos', alertDismissed, 'RAISE','OK');
+return false;
+}
+var formData = {
+'nome_equipe'              : $('input[name=nome_equipe]').val(),
+'estados'              : $('select[name=estados]').val(),
+'modalidade_equipe'              : $('select[name=modalidade_equipe]').val(),
+ 'cidades'                  : $('select[name=cidades]').val()
+};
+    
+      
+    
+    
+// LEIO ID 
+var url_le = "http://hostplasma.com.br/raise/le_perfil.php?nocache=" + Math.random() + "&email=" + login + "";
+$.getJSON(url_le, function(result_le) {
+console.log(result_le);
+$.each(result_le, function(i, field) {         
+window.localStorage.setItem('id_usuario_logado1', field.id);
+var id_usuario_logado1 = window.localStorage.getItem('id_usuario_logado1');
+    
+    
+if (field.raises >= '5') {
+    
+$.ajax({
+type        : 'POST',
+url         : "http://hostplasma.com.br/raise/CRIAR_EQUIPE.php?nocache=" + Math.random() + "&email=" + login + "&id=" + id_usuario_logado1 + "",
+data        : formData,
+crossDomain: true,
+cache: false,
+beforeSend: function() {
+//$("#enviar_usuarios").text('Verificando...');
+}, 
+success: function(data) {
+if (data == "success") {
+navigator.notification.alert('Equipe criada com sucesso!', alertDismissed, 'RAISE','OK');
+$('.adicionar_agenda').animate({opacity: 0}, 500).hide(0);
+location.reload();
+return;
+} else if (data == "error") {     
+navigator.notification.alert('Erro, tente novamente!', alertDismissed, 'RAISE','OK');
+return;}}	   });	
+location.reload();
+} else { 
+//alert ('Você não tem raises suficiente para criar uma equipe, Porfavor recarregue sua conta!');
+navigator.notification.alert('Você não tem raises suficiente para criar uma equipe, Porfavor recarregue sua conta!', alertDismissed, 'RAISE','OK');  
+location.reload();
+}    
+
+});
+    
+    
+    
+    
+    
+        // fecho os 2 leio id
+    });  
+});	 
+    // fecho os 2 leio id
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+ 
+
+
+</script>
+
+<style type="text/css">
+    .medal {background-image: url('img/medalhas.png');
+    background-repeat: no-repeat;
+    height: 33px;
+    outline: 0;
+    width: 25px;
+    z-index: 0;
+        float: left;
+          margin: 10px;
+    margin-top: 25px;}
+    .medal2 {background-image: url('img/medalhas.png');
+    background-repeat: no-repeat;
+    height: 33px;
+    outline: 0;
+    width: 25px;
+    z-index: 0;
+    float: left;
+    margin: 10px;
+    margin-top: 25px;
+    background-position: -25px 0;}
+    
+    
+    
+    .medal3 {background-image: url('img/medalhas.png');
+    background-repeat: no-repeat;
+    height: 33px;
+    outline: 0;
+    width: 25px;
+    z-index: 0;
+        float: left;
+          margin: 10px;
+    margin-top: 25px;
+        background-position: -50px 0;}
+    
+    .ADD_MEDALHAS {    padding: 10px;
+    line-height: 1.1;
+    background: #fff;
+    margin: 15px;
+            color: #666;
+    border: 1px #000 dashed;
+    text-align: center;}
+</style>
+
+<link rel='stylesheet'  href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' media='all' />
+
+
+
+<section class='quadro_de_medalhas' id="atualizar_atividades">
+<h6 style="text-align: center; padding-top:5px;padding-bottom: 0px;">Equipes</h6>
+  
+    
+    <p style="text-align: center;">Crie sua equipe ou faça parte</p>
+ 
+    <p  style="
+    border-radius:20px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+               text-align: center;color: #fff;background: url(http://media.istockphoto.com/vectors/soccer-team-on-sunset-background-vector-id119132288?k=6&m=119132288&s=612x612&w=0&h=v7nRf54dph-Mci4lo0nAG7bZ3FPWecxu51J6i7HRiIk=);
+    padding: 10px;">
+        
+      
+
+        
+        Crie sua equipe assim permitindo que equipes de todo territorio nacional e de todos os níveis de habilidade, possam competir em torneios..
+    <br><br>
+    
+		<b id="criar_equipe" style="font-family: 'PT Sans Narrow', sans-serif;BORDER: 1px solid #fff;
+    padding: 4px;" ><i class='fa fa-address-card-o'></i> CRIE SUA EQUIPE</b>
+
+     <br><br>
+    </p>
+    
+    
+    <div style="width:100%;text-align:center;"><hr class="minidivider" style="max-width:45px"></div>
+	
+
+		<p  style="  border-radius:20px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;text-align: center;    color: #fff;background: url(https://www.pcog.org/media/images/W1siZiIsIjIwMTcvMDMvMTYvMzRlamZtbzlsbF9wY29nXzA5bi5qcGciXSxbInAiLCJ0aHVtYiIsIjExMjB4NjMwIyJdXQ?sha=59b12d175e86760a);
+    padding: 10px;">Junte-se a grupos de pessoas que se junta para alcançar objetivos em comum.<br><br>
+    
+		<b id="buscar_equipe" style="font-family: 'PT Sans Narrow', sans-serif;    BORDER: 1px solid #fff;
+    padding: 4px;" ><i class='fa fa-search'></i> BUSQUE UMA EQUIPE</b>
+ <br><br>
+    
+    </p>
+	
+    
+	
+    <div class="medalhas_perfil_usuario"></div>
+
+</section>	
+    
+
+
+
+<section class='criando_equipe' style="z-index: 999999;">
+    
+<form class="cadastrar_parte1" name="FORM_EQUIPE" action="javascript:void()"  style="margin-top: 5px;">
+	<h6 style="font-size: 0.9em;text-align: center;margin: 0;padding: 0;">CRIE SUA EQUIPE</h6>
+<p style="text-align: center;font-size: 14px;">Preencha as informações</p>
+<div style="width:100%;text-align:center;"><hr class="minidivider" style="max-width:45px"></div>
+	<div class="contactform-wrapper">
+	
+  <p style="text-align: center;">	<progress max="100" value="0" id="progresso"></progress></p>
+	<div class="ADD_FOTOS" id="ADD_FOTOS_2">
+		<b style="font-family: 'PT Sans Narrow', sans-serif;" onclick="getCamera();" ><i class='fa fa-camera'></i> CAMERA</b> /  <a href='' onclick="getImage();" ><b style="font-family: 'PT Sans Narrow', sans-serif;" ><i class='fa fa-picture-o'></i> GALERIA</b></a><br>
+<br></div>
+	<div id="gallery-1" class="gallery galleryid-89 gallery-columns-3 gallery-size-thumbnail">
+        <div class="fotos_perfil_usuario"></div>
+			<br style="clear: both;">
+		</div>
+        
+<div class="name-wrapper"><input  type="text" style="padding-left: 10px;" name="nome_equipe" id="name" required placeholder="Nome da equipe" /></div>
+
+<select id="estados" name="estados" class="name_textarea formulario_p2 ip1" style="width: 98%;">
+			<option value="0"></option>
+		</select> 
+        
+        
+        
+		<select id="cidades" name="cidades" class="name_textarea formulario_p2 ip1" style="width: 98%;">
+		</select>
+        
+  		<select id="modalidade_equipe" name="modalidade_equipe" class="name_textarea formulario_p2 ip1" style="width: 98%;">
+            <option value="0">Qual modalidade?</option>
+        	<option value="Jiu-Jitsu">Jiu-Jitsu</option>
+        	<option value="Futebol">Futebol</option>
+        	<option value="Crossfit">Crossfit</option>
+        	<option value="Boxe">Boxe</option>
+        	<option value="Muay Thai">Muay Thai</option>
+        	<option value="Yoga">Yoga</option>
+        	<option value="Taekwondo">Taekwondo</option>
+        	<option value="Surf">Surf</option>
+        	<option value="Skate">Skate</option>
+        	<option value="Vôlei">Vôlei</option>
+        	<option value="Judô">Judô</option>
+        	<option value="Atletismo">Atletismo</option>
+        	<option value="Basquete">Basquete</option>
+        	<option value="Ciclismo">Ciclismo</option>
+        	<option value="Halterofilismo">Halterofilismo</option>
+        	<option value="Handbol">Handbol</option>
+        	<option value="Natação">Natação</option>
+</select>
+	
+	<div style="text-align: center;    margin-top: 20px;">
+		<a href="#" id="CRIAR_EQUIPE_BT"><span class="buttonred" style="border-radius:1px;font-size:12px;display:inline-block;">CRIAR (<i class="fa fa-bolt"></i> 5)</span></a>
+		<a href="#" class="FECHAR"><span  class="buttonorange" style="border-radius:1px;font-size:12px;display:inline-block;">FECHAR</span></a>
+        
+	</div>	
+		<p>&nbsp;</p>
+	</div>
+</form>
+	
+	</section>
+	
+
+
+
+
+
+
+
+
+<section class='buscando_equipe' style="z-index: 999999;">
+<form class="cadastrar_parte1" name="CADASTRAR_MEDALHAS" action="javascript:void()"  style="margin-top: 5px;">
+	<h6 style="font-size: 0.9em;text-align: center;margin: 0;padding: 0;">ENCONTRE UMA EQUIPE</h6>
+<p style="text-align: center;font-size: 14px;">Faça parte de alguma equipe</p>
+<div style="width:100%;text-align:center;"><hr class="minidivider" style="max-width:45px"></div>
+	<div class="contactform-wrapper">
+	
+
+        
+<div class="name-wrapper"><input  type="text" name="nome" id="name" required placeholder="Digite o nome da equipe" /></div>
+
+
+	
+	<div style="text-align: center;    margin-top: 20px;">
+		<a href="#" id="CADASTRAR_MEDALHAS"><span class="buttonred" style="border-radius:1px;font-size:12px;display:inline-block;">ENVIAR SOLICITAÇÃO</span></a>
+		<a href="#" class="FECHAR"><span  class="buttonorange" style="border-radius:1px;font-size:12px;display:inline-block;">FECHAR</span></a>
+        
+	</div>	
+		<p>&nbsp;</p>
+	</div>
+</form>
+	
+	</section>
+
+
+
+
+
+
+

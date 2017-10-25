@@ -1,0 +1,368 @@
+<script>
+	$(document).ready(function(){
+        
+        
+        
+    $('.adicionar_medalhas').hide();
+
+        
+        
+$( "#FECHAR_QUADRO_MEDALHA" ).click(function() {
+	$('.adicionar_medalhas').animate({opacity: 0}, 500).hide(0);    
+    $("#quadro_medalha_load").load("quadro_medalhas.html"); 
+    $('#quadro_medalha_load').slideDown(200).animate({opacity: 1}, 100);
+    $(".feed,.atividades,.agenda,.campanha,.galeria").css('display','none');
+
+});           
+        
+$( ".ADD_MEDALHAS" ).click(function() {
+    $('.adicionar_medalhas').slideDown(100).animate({opacity: 1}, 300);
+    $('.quadro_de_medalhas').hide();    
+    
+});
+        
+   
+        
+});
+    
+   
+    
+    
+    //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA //  CADASTRAR_AGENDA 
+$( "#CADASTRAR_MEDALHAS" ).click(function() {
+    
+            function alertDismissed(){}
+
+if(document.forms['CADASTRAR_MEDALHAS'].colocacao.value === "0" ||
+   document.forms['CADASTRAR_MEDALHAS'].categoria.value === "" ||
+   document.forms['CADASTRAR_MEDALHAS'].titulo.value === "" ||
+   document.forms['CADASTRAR_MEDALHAS'].peso.value === "" ||
+   document.forms['CADASTRAR_MEDALHAS'].descricao.value === "" || 
+   document.forms['CADASTRAR_MEDALHAS'].data.value === "" ){  
+
+  // alert ('preencha todos os campos');
+navigator.notification.alert('Preencha todos os campos', alertDismissed, 'RAISE','OK');
+return false;}
+var formData = {
+'colocacao'              : $('select[name=colocacao]').val(),
+'titulo'              : $('input[name=titulo]').val(),
+'categoria'              : $('input[name=categoria]').val(),
+ 'peso'                  : $('input[name=peso]').val(),
+'descricao'           	 : $('input[name=descricao]').val(),
+'data'          		 : $('input[name=data]').val()
+};
+    
+    
+    
+
+                     
+// LEIO ID 
+var url_le = "http://hostplasma.com.br/raise/le_perfil.php?nocache=" + Math.random() + "&email=" + login + "";
+$.getJSON(url_le, function(result_le) {
+console.log(result_le);
+$.each(result_le, function(i, field) {         
+window.localStorage.setItem('id_usuario_logado1', field.id);
+var id_usuario_logado1 = window.localStorage.getItem('id_usuario_logado1');
+    
+ //   alert(id_usuario_logado1);
+
+// LEIO ID 
+    
+        
+    
+    
+    
+$.ajax({
+type        : 'POST',
+url         : "http://hostplasma.com.br/raise/CADASTRAR_MEDALHAS.php?nocache=" + Math.random() + "&email=" + login + "&id=" + id_usuario_logado1 + "",
+data        : formData,
+crossDomain: true,
+cache: false,
+beforeSend: function() {
+//$("#enviar_usuarios").text('Verificando...');
+}, 
+success: function(data) {
+if (data == "success") {
+navigator.notification.alert('Medalha cadastrada com sucesso!', alertDismissed, 'RAISE','OK');
+$('.adicionar_agenda').animate({opacity: 0}, 500).hide(0);
+location.reload();
+return;
+} else if (data == "error") {     
+navigator.notification.alert('Erro, tente novamente!', alertDismissed, 'RAISE','OK');
+return;}}	   });	});
+    
+    
+    
+    
+    
+        // fecho os 2 leio id
+    });  
+});	 
+    // fecho os 2 leio id
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+$.fn.medalhas_perfil = function () {
+
+var url_pesquisar = "http://hostplasma.com.br/raise/LE_MEDALHAS_BOTAO.php?nocache=" + Math.random() + "&email=" + login + "";    
+$.getJSON(url_pesquisar, function(result_pesquisar) {
+console.log(result_pesquisar);
+$.each(result_pesquisar, function(i, field) {
+var categoria     = field.categoria; 
+var peso          = field.peso; 
+var data_medalha  = field.data_medalha; 
+var descricao     = field.descricao; 
+var colocacao_numero     = field.colocacao; 
+var email_usuario    = field.email_usuario; 
+var id    = field.id; 
+
+                    
+switch (colocacao_numero) {
+	case "1":
+		var colocacao = "OURO";
+		var icone	  = "medal";
+		break
+	case "2":
+		var colocacao = "PRATA";
+		var icone	  = "medal2";
+		break
+	case "3":
+		var colocacao = "BRONZE";
+		var icone	  = "medal3";
+		break
+	default:
+		var colocacao = "OUTRAS";
+		var icone	  = "outros.png";
+
+}  
+$(".medalhas_perfil_usuario").append("<div class='atividades_usuarioss'><a email='"+ email_usuario +"'  colocacao='"+ colocacao_numero +"' id='"+ id +"' href='javascript:void();' class='delbutton_medalhas'><div class='delbutton' style='float:right;'><i class='fa fa-times'></i></div></a><div class='"+ icone  +"'></div><small>"+ descricao +"<br>Cat.: <b>"+ categoria +"</b> <br>Peso: <b>"+ peso +"</b> <br>Data: <b>"+ data_medalha +"</b></small></div>"); 
+
+    
+});
+    
+       
+if (perfil === undefined) {
+} else { 
+$( ".delbutton_medalhas" ).hide();
+$( ".ADD_MEDALHAS" ).hide();
+    
+    
+}	
+      
+$(".delbutton_medalhas").click(function(){ 
+var del_id = $(this).attr('id');
+var colocacao_del = $(this).attr('colocacao');
+var email_del = $(this).attr('email');
+var info = 'id=' + del_id;
+    
+$.ajax({
+type: "POST",
+url: "http://hostplasma.com.br/raise/DELETAR_MEDALHAS.php",
+//data: info,  
+data: {id: del_id, colocacao: colocacao_del, email: email_del},
+    
+    
+success: function(){
+}
+});
+$(this).parents(".atividades_usuarioss").animate({ backgroundColor: "#fbc7c7" }, "fast")
+.animate({ opacity: "hide" }, "slow");
+return false;
+});  
+    
+    
+});
+}
+ 
+
+
+
+
+
+
+
+$('').medalhas_perfil();
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+         
+/*
+var url_meda = "http://hostplasma.com.br/raise/LE_MEDALHAS_BOTAO.php?nocache=" + Math.random() + "&id_usuario=" + id + "";
+        
+$.getJSON(url_meda, function(result_meda) {
+console.log(result_meda);
+$.each(result_meda, function(i, field) {
+       alert('po');
+
+var categoria     = field.categoria; 
+var peso          = field.peso; 
+var data_medalha  = field.data_medalha; 
+var descricao     = field.descricao; 
+var colocacao     = field.colocacao; 
+var id_usuario    = field.id_usuario; 
+
+                
+switch (colocacao) {
+	case "1":
+		var colocacao = "OURO";
+		var icone	  = "ouro.png";
+		break
+	case "2":
+		var colocacao = "PRATA";
+		var icone	  = "prata.png";
+		break
+	case "3":
+		var colocacao = "BRONZE";
+		var icone	  = "bronze.png";
+		break
+	default:
+		var colocacao = "OUTRAS";
+		var icone	  = "outros.png";
+
+}          
+
+    
+    $(".medalhas_perfil_usuario").append("<div class='atividades_usuarioss'><a id='' href='javascript:void();' class='delbutton_agenda'><div class='delbuttonp' style='float:right;'><i class='fa fa-times'></i></div></a><div class='medal'></div><small>"+ descricao +"<br>Cat.: <b>"+ categoria +"</b> <br>Peso: <b>"+ peso +"</b> <br>Data: <b>"+ data_medalha +"</b></small></div>"); 
+
+})     // <small style='float:right;'>"+ data +"</small>
+});    
+    */
+  
+</script>
+
+<style type="text/css">
+    .medal {background-image: url('img/medalhas.png');
+    background-repeat: no-repeat;
+    height: 33px;
+    outline: 0;
+    width: 25px;
+    z-index: 0;
+        float: left;
+          margin: 10px;
+    margin-top: 25px;}
+    .medal2 {background-image: url('img/medalhas.png');
+    background-repeat: no-repeat;
+    height: 33px;
+    outline: 0;
+    width: 25px;
+    z-index: 0;
+    float: left;
+    margin: 10px;
+    margin-top: 25px;
+    background-position: -25px 0;}
+    
+    
+    
+    .medal3 {background-image: url('img/medalhas.png');
+    background-repeat: no-repeat;
+    height: 33px;
+    outline: 0;
+    width: 25px;
+    z-index: 0;
+        float: left;
+          margin: 10px;
+    margin-top: 25px;
+        background-position: -50px 0;}
+    
+    .ADD_MEDALHAS {    padding: 10px;
+    line-height: 1.1;
+    background: #fff;
+    margin: 15px;
+    border: 1px #000 dashed;
+    text-align: center;}
+</style>
+
+<link rel='stylesheet'  href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' media='all' />
+
+
+
+<section class='quadro_de_medalhas' id="atualizar_atividades" style="">
+	<h6 style="text-align: center; padding-top:5px;padding-bottom: 0px;">Quadro de medalhas</h6>
+	<p style="text-align: center;">Acompanhe as classificações.</p>
+	
+	
+	<div class="ADD_MEDALHAS" id="ADD_MEDALHAS_2">
+		<b style="font-family: 'PT Sans Narrow', sans-serif;" ><i class='fa fa-address-card-o'></i> ADICIONAR</b><br>
+	</div>
+	
+	
+    <div class="medalhas_perfil_usuario"></div>
+
+</section>	
+    
+
+
+
+<section class='adicionar_medalhas' style="z-index: 999999;">
+<form class="cadastrar_parte1" name="CADASTRAR_MEDALHAS" action="javascript:void()"  style="margin-top: 5px;">
+	<h6 style="font-size: 0.9em;text-align: center;margin: 0;padding: 0;">CADASTRE SUAS MEDALHAS</h6>
+<p style="text-align: center;font-size: 14px;">Preencha as informações</p>
+<div style="width:100%;text-align:center;"><hr class="minidivider" style="max-width:45px"></div>
+	<div class="contactform-wrapper">
+	
+        
+<select id="name" name="colocacao" class="formulario_p2 ip1" style="width: 98%;" >
+  <option value="0">Qual colocação?</option>
+  <option value="1">Ouro</option>
+  <option value="2">Prata</option>
+  <option value="3">Bronze</option>
+
+</select>        
+        
+<input class="horas"  type="text" name="categoria" id="name"  required placeholder="Categoria" />
+		
+<input class="horas"  type="text" name="peso" id="name"  required placeholder="Peso" />
+
+<div class="name-wrapper">
+    <label for="hora_inicio" class="labels">Data</label>
+<input class="horas"  type="date" name="data" id="name" required placeholder="Data" /></div>
+        
+        		<div class="name-wrapper"><input  type="text" name="titulo" id="name" required placeholder="Titulo" /></div>
+
+		
+		<div class="name-wrapper"><input  type="text" name="descricao" id="name" required placeholder="Descricao" /></div>
+
+	
+	<div style="text-align: center;    margin-top: 20px;">
+		<a href="#" id="CADASTRAR_MEDALHAS"><span class="buttonred" style="border-radius:1px;font-size:12px;display:inline-block;">CADASTRAR</span></a>
+		<a href="#" id="FECHAR_QUADRO_MEDALHA"><span  class="buttonorange" style="border-radius:1px;font-size:12px;display:inline-block;">FECHAR</span></a>
+	</div>	
+		<p>&nbsp;</p>
+	</div>
+</form>
+	
+	</section>
+	

@@ -1,0 +1,204 @@
+
+<script>
+    
+    	
+// Wait for PhoneGap to load
+      document.addEventListener("deviceready", onDeviceReady, false);
+
+      // PhoneGap is ready
+      function onDeviceReady() {
+          console.log("device ready");
+          // Do cool things here...
+		//  		document.addEventListener("backbutton", onBackKeyDown, false);
+
+		  
+      }
+
+///		function onBackKeyDown() {
+  //  window.history.back();
+//}
+
+	
+	
+     function getCamera() {
+		 		 
+          // Retrieve image file location from specified source
+          navigator.camera.getPicture(uploadPhoto, function(message) {
+                     // alert('get picture failed');
+                  },{
+                      quality: 50,
+                      destinationType: navigator.camera.DestinationType.FILE_URI,
+                      sourceType: navigator.camera.PictureSourceType.CAMERA
+                  }
+          );
+
+      }
+	
+	
+	function getImage() {
+		
+          // Retrieve image file location from specified source
+          navigator.camera.getPicture(uploadPhoto, function(message) {
+                    //  alert('get picture failed');
+                  },{
+                      quality: 50,
+                      destinationType: navigator.camera.DestinationType.FILE_URI,
+                      sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+                  }
+          );
+
+      }
+
+      function uploadPhoto(imageURI) {
+		  
+		  
+          var options = new FileUploadOptions();
+          options.fileKey="file";
+          options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+          options.mimeType="image/jpeg";
+
+          var params = new Object();
+          params.value1 = "test";
+          params.value2 = "param";
+
+          options.params = params;
+          options.chunkedMode = false;
+
+		  $('#image').attr('src', imageURI);     
+
+	          var ft = new FileTransfer();
+
+          ft.upload(imageURI, "http://hostplasma.com.br/raise/UPLOAD3.php?email="+login+"", win, fail, options);
+		  
+setTimeout(
+  function()  
+  {
+	$("#progresso").animate({ value: "20" });
+  }, 1000); 
+				  
+		  
+      }
+
+      function win(r) {
+          console.log("Code = " + r.responseCode.toString()+"\n");
+          console.log("Response = " + r.response.toString()+"\n");
+          console.log("Sent = " + r.bytesSent.toString()+"\n");
+	//	alert('fuii');
+		  	$("#progresso").animate({ value: "100" });
+
+      }
+
+      function fail(error) {
+          alert("Ops, Algo deu errado.. Tente enviar novamente!" + error.code);
+      }	
+	
+	
+
+
+$.fn.galeria_perfil = function () {
+
+var url_pesquisar = "http://hostplasma.com.br/raise/LE_GALERIA.php?nocache=" + Math.random() + "&email=" + login + "";    
+$.getJSON(url_pesquisar, function(result_pesquisar) {
+console.log(result_pesquisar);
+$.each(result_pesquisar, function(i, field) {
+    
+var imagem         = field.imagem; 
+var email_usuario  = field.email_usuario; 
+var id             = field.id; 
+    
+$(".fotos_perfil_usuario").append("<dl class='gallery-item'><dt class='gallery-icon portrait'><a href='http://hostplasma.com.br/raise/galeria/"+ imagem  +"'><img width='350' height='350' src='http://hostplasma.com.br/raise/sample.php?url=http://hostplasma.com.br/raise/galeria/"+ imagem  +"&width=300&height=300' class='attachment-thumbnail' ></a></dt></dl>"); 
+
+    
+});
+    
+        
+if (perfil === undefined) {
+} else { 
+$( ".delbutton_medalhas" ).hide();
+$( ".ADD_MEDALHAS" ).hide();
+    
+    
+}	
+      
+$(".delbutton_medalhas").click(function(){ 
+var del_id = $(this).attr('id');
+var colocacao_del = $(this).attr('colocacao');
+var email_del = $(this).attr('email');
+var info = 'id=' + del_id;
+    
+$.ajax({
+type: "POST",
+url: "http://hostplasma.com.br/raise/DELETAR_MEDALHAS.php",
+//data: info,  
+data: {id: del_id, colocacao: colocacao_del, email: email_del},
+    
+    
+success: function(){
+}
+});
+$(this).parents(".atividades_usuarioss").animate({ backgroundColor: "#fbc7c7" }, "fast")
+.animate({ opacity: "hide" }, "slow");
+return false;
+});  
+    
+    
+});
+}
+ 
+
+
+$('').galeria_perfil();
+</script>
+
+<style type="text/css">
+
+
+			#gallery-1 {
+				margin: auto;
+			}
+			#gallery-1 .gallery-item {
+				float: left;
+				margin-top: 10px;
+				text-align: center;
+				width: 33%;
+			}
+			#gallery-1 img {
+				border: 2px solid #cfcfcf;
+			}
+			#gallery-1 .gallery-caption {
+				margin-left: 0;
+			}
+  
+</style>
+
+
+
+    
+
+
+    
+<link rel='stylesheet'  href='photoswipe/photoswipe.css' type='text/css' media='all' />
+
+
+<script type="text/javascript" src="http://bonfirethemes.com/_touch/wp-content/plugins/photoswipe/lib/psw.call.js?ver=1.0"></script>
+<script type="text/javascript" src="http://bonfirethemes.com/_touch/wp-content/themes/Touch/js/autogrow/jquery.autogrow-textarea.js?ver=1"></script>
+<script type="text/javascript" src="http://bonfirethemes.com/_touch/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1"></script>
+<script type="text/javascript" src="photoswipe/lib/klass.min.js"></script>
+<script type="text/javascript" src="photoswipe/code.photoswipe-3.0.4.min.js"></script>
+
+
+
+
+
+    <section class='quadro_de_medalhas' id="atualizar_atividades" style="">
+	<h6 style="text-align: center; padding-top:5px;padding-bottom: 0px;">Galeria de fotos</h6>
+	<p style="text-align: center;">principais acontecimentos.</p>
+    <p style="text-align: center;">	<progress max="100" value="0" id="progresso"></progress></p>
+	<div class="ADD_FOTOS" id="ADD_FOTOS_2">
+		<b style="font-family: 'PT Sans Narrow', sans-serif;" onclick="getCamera();" ><i class='fa fa-camera'></i> CAMERA</b> /  <a href='' onclick="getImage();" ><b style="font-family: 'PT Sans Narrow', sans-serif;" ><i class='fa fa-picture-o'></i> GALERIA</b></a><br>
+<br></div>
+	<div id="gallery-1" class="gallery galleryid-89 gallery-columns-3 gallery-size-thumbnail">
+        <div class="fotos_perfil_usuario"></div>
+			<br style="clear: both;">
+		</div>
+</section>	
