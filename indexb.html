@@ -10,7 +10,7 @@
     <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
-
+    <div id="loading" class="overlay"></div>
     <div class="container-fluid" id="inicio">
         <div class="row">
             <div class="col-12">
@@ -73,12 +73,19 @@
                             <button type="button" class="btn btn-outline-secondary" onclick="fechaLogin();">Voltar</button>
                         </div>
                         <div class="form-group col-6 left">
-                            <button type="button" class="btn btn-outline-success">Entrar</button>
+                            <button type="button" class="btn btn-outline-success" onclick="executaLogin()">Entrar</button>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-12 center">
-                            <button type="button" class="btn btn-outline-primary"><i class="fa fa-facebook fa-lg"></i>&nbsp;&nbsp;Login com Facebook</button>
+                            <a href="javascript:abreLembrete();">Esqueceu sua senha?</a>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-12 center">
+                            <button type="button" class="btn btn-outline-primary" onclick="executaLoginFacebook();">
+                                <i class="fa fa-facebook fa-lg"></i>&nbsp;&nbsp;Login com Facebook
+                            </button>
                         </div>
                     </div>
                 </form>
@@ -123,12 +130,45 @@
                             <button type="button" class="btn btn-outline-secondary" onclick="fechaCadastro();">Voltar</button>
                         </div>
                         <div class="form-group col-6 left">
-                            <button type="button" class="btn btn-outline-success">Cadastrar</button>
+                            <button type="button" class="btn btn-outline-success" onclick="executaCadastro();">Cadastrar</button>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-12 center">
-                            <button type="button" class="btn btn-outline-primary"><i class="fa fa-facebook fa-lg"></i>&nbsp;&nbsp;Cadastrar com Facebook</button>
+                            <button type="button" class="btn btn-outline-primary" onclick="executaCadastroFacebook();">
+                                <i class="fa fa-facebook fa-lg"></i>&nbsp;&nbsp;Cadastrar com Facebook
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" id="lembrete">
+        <div class="row">
+            <div class="col-3">
+                <p class="center pTopLeft10"><img src="img/raise.png" class="img-fluid" /></p>
+            </div>
+            <div class="col-9 pTop25 tJust">
+                <h5>FAÇA PARTE DA REVOLUÇÃO DO ESPORTE</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-12">
+                            <label for="InputEmail">Email / Login:</label>
+                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Insira o seu email ou o login">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-6 right">
+                            <button type="button" class="btn btn-outline-secondary" onclick="fechaLembrete();">Voltar</button>
+                        </div>
+                        <div class="form-group col-6 left">
+                            <button type="button" class="btn btn-outline-success" onclick="executalembrete();">Enviar Lembrete</button>
                         </div>
                     </div>
                 </form>
