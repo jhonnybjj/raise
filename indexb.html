@@ -5,42 +5,101 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     <link href="assets/global/css/style.css" rel="stylesheet">
+    <link href="assets/index/index.css" rel="stylesheet">
     <link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
 
 </head>
-
 <body>
 
-    <div class="container-fluid">
+    <div class="container-fluid" id="inicio">
         <div class="row">
-            <div class="col-md-12 center">
-              <img src="img/raise.png" class="img-responsive" />
+            <div class="col-12">
+              <p class="center"><img src="img/raise.png" class="img-fluid" /></p>
             </div>
-            <div class="col-md-12">
-                <h3 class="center">"FAÇA PARTE DA REVOLUÇÃO DO ESPORTE"</h3>
+            <div class="col-12 center">
+                <h5 class="center">"FAÇA PARTE DA REVOLUÇÃO DO ESPORTE"</h5>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-6">
-                <input type="button" class="btn btn-default" value="CADASTRAR" />
+        <div class="row pTop10">
+            <div class="col-6 right">
+                <input type="button" class="btn btn-outline-primary" onclick="abreCadastro();" value="CADASTRAR" />
             </div>
-            <div class="col-md-6">
-                <input type="button" class="btn btn-default" value="ENTRAR" />
+            <div class="col-6 left">
+                <input type="button" class="btn btn-outline-success" onclick="abreLogin();" value="ENTRAR" />
             </div>
         </div>
 
+        <div class="row pTop30">
+            <div class="col-4 center">
+                <img src="img/1Curriculo.jpg" class="img-fluid" />
+                <h6>Crie seu curriculum</h6>
+            </div>
+            <div class="col-4 center">
+                <img src="img/2Equipe.jpg" class="img-fluid" />
+                <h6>Gerencie sua equipe</h6>
+            </div>
+            <div class="col-4 center">
+                <img src="img/3Patrocinio.jpg" class="img-fluid" />
+                <h6>Novos patrocinadores</h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" id="login">
         <div class="row">
-            <div class="col-md-4">
-                <img src="img/raise.png" class="img-responsive" />
+            <div class="col-12">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-6 right">
+                            <button type="submit" class="btn btn-outline-secondary" onclick="fechaLogin();">Voltar</button>
+                        </div>
+                        <div class="form-group col-6 left">
+                            <button type="submit" class="btn btn-outline-success">Entrar</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="col-md-4">
-                <img src="img/raise.png" class="img-responsive" />
-            </div>
-            <div class="col-md-4">
-                <img src="img/raise.png" class="img-responsive" />
+        </div>
+    </div>
+
+    <div class="container-fluid" id="cadastro">
+        <div class="row">
+            <div class="col-12">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nome</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Email</label>
+                            <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-6 right">
+                            <button type="submit" class="btn btn-outline-secondary" onclick="fechaCadastro();">Voltar</button>
+                        </div>
+                        <div class="form-group col-6 left">
+                            <button type="submit" class="btn btn-outline-success">Entrar</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -48,6 +107,7 @@
     <script src="assets/global/plugins/jquery/jquery-3.2.1.min.js"></script>
     <script src="assets/global/plugins/popper/popper.min.js"></script>
     <script src="assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/index/index.js"></script>
 
 
 </body>

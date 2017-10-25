@@ -1,5 +1,21 @@
-<style>
-    .center{
-        text-align: center;
-    }
-</style>
+.center{
+    text-align: center;
+}
+.left{
+    text-align: left;
+}
+.right{
+    text-align: right;
+}
+.pTop10{
+    padding-top: 10px;
+}
+.pTop20{
+    padding-top: 20px;
+}
+.pTop30{
+    padding-top: 30px;
+}
+.pTop40{
+    padding-top: 40px;
+}
