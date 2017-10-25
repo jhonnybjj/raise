@@ -13,9 +13,18 @@
 .pTop20{
     padding-top: 20px;
 }
+.pTop25{
+    padding-top: 25px;
+}
 .pTop30{
     padding-top: 30px;
 }
 .pTop40{
     padding-top: 40px;
+}
+.pTopLeft10{
+    padding: 10px 0px;
+}
+.tJust{
+    text-align: justify;
 }
