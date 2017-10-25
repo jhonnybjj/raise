@@ -1,0 +1,17 @@
+
+/* MAX-WIDTH 650px
+**************************************************/
+@media screen and (max-width: 650px) {
+#menu-index, #menu {
+	width:auto !important;
+}
+}
+
+
+/* MAX-WIDTH 1000px
+**************************************************/
+@media screen and (max-width: 1200px) {
+#menu-index, #menu {
+	width:45%;
+}
+}
