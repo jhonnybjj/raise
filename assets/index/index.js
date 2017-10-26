@@ -32,30 +32,30 @@ function fechaLembrete(){
 function executaCadastro(){
     document.getElementById('loading').style.display = 'block';
     setInterval(function(){
-        location='indexb.html';
+        location='inicial.html';
     }, 2000);
 }
 function executaCadastroFacebook(){
     document.getElementById('loading').style.display = 'block';
     setInterval(function(){
-        location='indexb.html';
+        location='inicial.html';
     }, 2000);
 }
 function executaLogin(){
     document.getElementById('loading').style.display = 'block';
     setInterval(function(){
-        location='indexb.html';
+        location='inicial.html';
     }, 2000);
 }
 function executaLoginFacebook(){
     document.getElementById('loading').style.display = 'block';
     setInterval(function(){
-        location='indexb.html';
+        location='inicial.html';
     }, 2000);
 }
 function executalembrete(){
     document.getElementById('loading').style.display = 'block';
     setInterval(function(){
-        location='indexb.html';
+        location='inicial.html';
     }, 2000);
 }

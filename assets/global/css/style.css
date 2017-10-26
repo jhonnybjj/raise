@@ -1,3 +1,4 @@
+/*ESPAÇAMENTOS*/
 .center{
     text-align: center;
 }
@@ -23,7 +24,7 @@
     padding-top: 40px;
 }
 .pTopLeft10{
-    padding: 10px 0px;
+    padding: 10px 0px 0px 10px;
 }
 .tJust{
     text-align: justify;
